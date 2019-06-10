@@ -1,13 +1,13 @@
-﻿const Discord = require('discord.js');
+const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "&"
-var adminprefix = '&'
+var prefix = "#"
+var adminprefix = '#'
 
 
 //bc
 
 client.on("message", message => {
-    if (message.content.startsWith("&obc")) {
+    if (message.content.startsWith("#obc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -23,7 +23,7 @@ client.on("message", message => {
 //bc online
 
 
-  var prefix = "&";
+  var prefix = "#";
 
   client.on("message", message => {
   
@@ -41,7 +41,7 @@ client.on("message", message => {
 
 client.on('message', message => {
     var  user = message.mentions.users.first() || message.author;
-if (message.content.startsWith("&avatar")) {
+if (message.content.startsWith("#avatar")) {
 message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
 }
 });
@@ -66,40 +66,40 @@ m.sendMessage(args)
 });
 
   client.on('message', msg => {
-    if(msg.content === '&help')
+    if(msg.content === '#help')
     msg.reply('تم ارسال لك هيلب ف خاص  :white_check_mark:')
   });
   
   
   client.on("message", message => {
-    if (message.content === "&help") {
+    if (message.content === "#help") {
      const embed = new Discord.RichEmbed() 
          .setColor("#00FF00")
          .setThumbnail(message.author.avatarURL)
          .setDescription(`**Help|هيلب
 
-       &obc | لأرسال برود كاست للكل
+       #obc | لأرسال برود كاست للكل
 
-       &bc  |  لأرسال برود كاست للأونلاين
+       #bc  |  لأرسال برود كاست للأونلاين
 
-       &adminbc | برودكاست عادي
+       #adminbc | برودكاست عادي
 
                 ادمن
 
 
-       &setname | تغير اسم بوت
+       #setname | تغير اسم بوت
 
-       &setava | تغير صورة بوت
+       #setava | تغير صورة بوت
 
-       &setg   | تغير بلاينق بوت
+       #setg   | تغير بلاينق بوت
 
-       &leave  | لاخراج بوت من سيرفر
+       #leave  | لاخراج بوت من سيرفر
        
-       &setw   | لتغير وتشنيق بوت
+       #setw   | لتغير وتشنيق بوت
 
-       &setl   | لتغير ليستينق بوت
+       #setl   | لتغير ليستينق بوت
 
-       &sets   | لتغير ستريمينق بوت
+       #sets   | لتغير ستريمينق بوت
 
        ** `)
    message.author.sendEmbed(embed)
@@ -142,4 +142,4 @@ if (message.content.startsWith(adminprefix + 'setava')) {
 });
 
 
-
+client.login(process.env.BOT_TOKEN);
